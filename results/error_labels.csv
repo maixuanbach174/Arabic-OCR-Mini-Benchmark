@@ -1,0 +1,46 @@
+system,id,labels,note
+qwen25vl_3b,historyar_0059,word;dotted;joining,المريخ→المرجح (real word); خ→ح; يوم الثلثاء merged into بومالك
+qwen25vl_3b,historyar_0075,word;shape,ابتدات→البدلات: a real but wrong word
+qwen25vl_3b,historyar_0097,word;shape;digits,اطرافها→خاطرها; invents the digit 2
+qwen25vl_3b,historyar_0163,word;joining,Persian کوچک→كرجل; والزنكو له merged
+qwen25vl_3b,khatt_0041,word;dotted,"Replaces the nonsense test words (مشمش، غيظ، بث) with real words (مشهدة، عيال، بنت)"
+qwen25vl_3b,khatt_0089,word;joining,وهب→ونصب; ن عم→نعم
+qwen25vl_3b,khatt_0090,word;missing,الكلمات→الاتصالات; drops the end of the line
+qwen25vl_3b,khatt_0114,word;extra,Inserts الله where the image has للحج / الحجيج
+qwen25vl_3b,khatt_0119,word;hallucination,"Fluent but unrelated text; repeats المؤرقة"
+qwen25vl_3b,khatt_0197,dotted,اخرى→احرز (خ→ح)
+qwen25vl_3b,khatt_0198,joining;word,هنالك→هنا لك; شك→شكر
+qwen25vl_3b,pats_0142,order;word,Moves قبل الخطبة to a different position; خرج→خروج
+qwen25vl_3b,pats_0279,extra,Adds وسلم: the language prior completes صلى الله عليه وسلم
+qwen25vl_3b,pats_0325,dotted;word;joining,اتى→انى (ت→ن); مكانك→ما كذلك
+qwen25vl_3b,pats_0373,dotted,بوله→يوله; بجريدة→يجريدة (ب→ي); النميمة→الثنيمة
+tesseract,historyar_0006,dotted;shape;joining,الزوايا→الروانا (ز→ر، ي→ن); معدل→معرل (د→ر); النهار merged with next letter
+tesseract,historyar_0071,joining;shape,وتكون كل واحدة→وتكوزجزواحرة
+tesseract,khatt_0001,shape;dotted,Letter soup on handwriting; خازن→هارن
+tesseract,khatt_0031,shape;joining;extra,Splits ذلك→ذ لك; stray punctuation
+tesseract,khatt_0075,shape;joining,عصر→عمر (ص→م); مناخي→ملاخي; البشري→ا لبر
+tesseract,khatt_0082,shape;dotted;missing,Garbled; drops words
+tesseract,khatt_0099,shape;extra,Garbled; stray | and commas
+tesseract,khatt_0120,shape;extra,Garbled; stray |
+tesseract,khatt_0151,shape;missing,Garbled; drops words
+tesseract,khatt_0189,dotted;shape,نائم→ناتم; مثل→مئل; راجح→راحم; هل→عل
+tesseract,khatt_0198,dotted;shape;extra,يعد→بعر (ي→ب); هنالك→هتالك (ن→ت)
+tesseract,pats_0047,dotted;joining,لاتوهما→لانوهما (ت→ن); الناس→الئاس; ولو حبوا merged
+tesseract,pats_0309,dotted,حتى→حنى twice (ت→ن); اشتمال→اشثمال (ت→ث)
+tesseract,pats_0447,dotted;shape,فرفع→فرقع (ف→ق); يديه→يدية (ه→ة); ما→ها
+tesseract,pats_0470,dotted;shape,شهدته→شعدتة (ه→ة); دار→صار; ما→كا
+easyocr,historyar_0007,joining,الاول من→لاولم; التى تمر على→اليترعل
+easyocr,historyar_0067,dotted;shape;missing,صخور→محوز (خ→ح، ر→ز); هذا→هدا (ذ→د)
+easyocr,historyar_0108,joining;dotted;digits,حواصلالزابدة merged; injects the digit 7
+easyocr,historyar_0138,joining,دقيقة split; والخمسين ثانية→والحخسبرثانية merged
+easyocr,historyar_0149,joining;dotted;missing,وبيلانالجزءالثالت: four words merged; ث→ت
+easyocr,historyar_0168,joining;shape,وارلعونانمد merged; the reference uses dotless ٮ/ٯ
+easyocr,historyar_0178,joining;dotted,بجلسععوام merged; بالتلذذ→بالنلذد (ت→ن، ذ→د)
+easyocr,historyar_0197,joining;dotted;missing,شيء→سي (ش→س); ثلاثة→ثلائه
+easyocr,khatt_0004,dotted;shape;extra,لزمتك→لرمرك (ز→ر); انقض→نقحى
+easyocr,khatt_0039,dotted;shape;digits,Garbled; injects 9
+easyocr,khatt_0093,dotted;digits;joining,مثل→متل (ث→ت); injects 6
+easyocr,khatt_0188,shape;digits;extra;missing,Garbled with digits and symbols (= ~ _)
+easyocr,pats_0052,missing;extra,Drops على; emits underscores
+easyocr,pats_0112,missing;shape,ابسط→اسط; drops ثم; بعده→لعده
+easyocr,pats_0316,joining,في كل→فيكل; فيدارسه→فيدار ه سه

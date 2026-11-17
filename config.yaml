@@ -1,0 +1,52 @@
+# Arabic OCR Mini-Benchmark configuration.
+# `python run.py --config config.yaml` runs data -> predictions -> metrics -> report.
+
+seed: 42
+n_per_subset: 100
+
+# KITAB-Bench subsets (IDs and text columns verified on the Hugging Face Hub).
+subsets:
+  pats:                       # printed
+    hf_id: ahmedheakl/arocrbench_patsocr
+    text_column: answer
+  khatt:                      # handwritten
+    hf_id: ahmedheakl/arocrbench_khatt
+    text_column: text
+  historyar:                  # historical manuscripts
+    hf_id: ahmedheakl/arocrbench_historyar
+    text_column: text
+
+paths:
+  data: data
+  preds: preds
+  results: results
+
+prompt: "Transcribe all Arabic text in this image exactly as written. Output only the text."
+
+# Systems to run, in this order. Remove one to skip it.
+systems:
+  qwen25vl_3b:
+    runner: qwen_vl_mlx
+    model_id: mlx-community/Qwen2.5-VL-3B-Instruct-bf16
+    max_new_tokens: 256        # references are <= 115 chars; a hard stop for runaway generations
+    max_pixels: 1003520        # downscale larger images (1280 * 28 * 28) to bound vision tokens
+  tesseract:
+    runner: tesseract
+    lang: ara
+    psm: 7                     # every sample is a single text line
+  easyocr:
+    runner: easyocr_runner
+    lang: ar
+    gpu: false
+  # Optional, if RAM allows (~5 GB):
+  # qwen25vl_7b_4bit:
+  #   runner: qwen_vl_mlx
+  #   model_id: mlx-community/Qwen2.5-VL-7B-Instruct-4bit
+  #   max_new_tokens: 256
+  #   max_pixels: 1003520
+
+metrics:
+  hallucination_ratio: 1.5     # pred longer than 1.5x the reference (normalized chars)
+  worst_k: 15                  # worst predictions per system (appendix of error_analysis.md)
+  error_sample_k: 15           # partial errors per system sampled for hand labelling
+  error_band: [0.05, 0.6]      # CER range for that sample: real misreadings, not total failures

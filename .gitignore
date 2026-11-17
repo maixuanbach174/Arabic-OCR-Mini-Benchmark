@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Large / regenerable artifacts
+data/
+results/run.log
+*.safetensors
+
+# Personal planning notes
+PLAN.md
+
+.DS_Store
+
+# Local virtualenv
+.venv/
